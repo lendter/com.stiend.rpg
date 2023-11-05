@@ -25,8 +25,11 @@ public class Fighter extends PlayerCharacter{
 
 	@Override
 	public boolean defend(PlayerCharacter opponent) {
-		// TODO Auto-generated method stub
-		return false;
+		if(opponent.getStrength() > this.getWeapon().getDefense()) {
+			takeDamage(opponent.getStrength()-this.getWeapon().getDefense());
+			return false;
+		}
+		return true;
 	}
 
 	public Weapon getWeapon() {

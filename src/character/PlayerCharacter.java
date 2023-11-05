@@ -35,7 +35,11 @@ public abstract class PlayerCharacter {
 	}
 
 	public void setHp(int hp) {
-		this.hp = hp;
+		if(hp > 0) {
+			this.hp = hp;
+		}else {
+			this.hp = 0;
+		}
 	}
 
 	public int getIntelligence() {
@@ -76,6 +80,10 @@ public abstract class PlayerCharacter {
 
 	public void setPosition(Position position) {
 		this.position = position;
+	}
+	
+	public void takeDamage(int damage) {
+		setHp(getHp() - damage);
 	}
 	
 	public abstract void move(Position position);
