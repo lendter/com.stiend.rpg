@@ -4,9 +4,14 @@ import physics.Position;
 import wizarding.MagicTalent;
 import wizarding.PerformStyle;
 
-public class Wizard extends PlayerCharacter{
+public class Wizard extends PlayerCharacter {
 	private MagicTalent talent;
-	
+
+	public Wizard(String name, int hp, int intelligence, int strength, int constitution, int dexterity, MagicTalent talent) {
+		super(name, hp, intelligence, strength, constitution, dexterity);
+		setTalent(talent);
+	}
+
 	@Override
 	public void move(Position position) {
 		// TODO Auto-generated method stub
@@ -14,13 +19,21 @@ public class Wizard extends PlayerCharacter{
 
 	@Override
 	public void attack(PlayerCharacter opponent) {
-		talent.performMagic(this, opponent, PerformStyle.Attack);
+		getTalent().performMagic(this, opponent, PerformStyle.Attack);
 	}
 
 	@Override
 	public boolean defend(PlayerCharacter opponent) {
-		talent.performMagic(this, opponent, PerformStyle.Defense);
+		getTalent().performMagic(this, opponent, PerformStyle.Defense);
 		return false;
 	}
-	
+
+	public MagicTalent getTalent() {
+		return talent;
+	}
+
+	private void setTalent(MagicTalent talent) {
+		this.talent = talent;
+	}
+
 }

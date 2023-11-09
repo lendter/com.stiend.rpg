@@ -6,10 +6,14 @@ import physics.Position;
 public class Fighter extends PlayerCharacter{
 	private Weapon weapon;
 	
+	public Fighter(String name, int hp, int intelligence, int strength, int constitution, int dexterity, Weapon weapon) {
+		super(name, hp, intelligence, strength, constitution, dexterity);
+		setWeapon(weapon);
+	}
+	
 	@Override
 	public void move(Position position) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
