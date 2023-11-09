@@ -86,7 +86,9 @@ public abstract class PlayerCharacter {
 		setHp(getHp() - damage);
 	}
 	
-	public abstract void move(Position position);
+	public void move(Position position) {
+		setPosition(position);
+	}
 	
 	public abstract void attack(PlayerCharacter opponent);
 	
