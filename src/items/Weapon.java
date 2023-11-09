@@ -1,10 +1,11 @@
 package items;
 
-public class Weapon {
+public abstract class Weapon extends Item{
 	private int damage;
 	private int defense;
 	
-	public Weapon(int damage, int defense) {
+	protected Weapon(int damage, int defense) {
+		super.setType(Type.WEAPON);
 		setDamage(damage);
 		setDefense(defense);
 	}

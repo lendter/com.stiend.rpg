@@ -2,11 +2,12 @@ package items;
 
 import character.PlayerCharacter;
 
-public abstract class Artifact {
+public abstract class Artifact extends Item{
 	
 	protected int uses;
 	
 	protected Artifact(int uses) {
+		super.setType(Type.ARTIFACT);
 		setUses(uses);
 	}
 	
