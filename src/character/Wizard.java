@@ -1,6 +1,5 @@
 package character;
 
-import physics.Position;
 import wizarding.MagicTalent;
 import wizarding.PerformStyle;
 
@@ -12,10 +11,6 @@ public class Wizard extends PlayerCharacter {
 		setTalent(talent);
 	}
 
-	@Override
-	public void move(Position position) {
-		// TODO Auto-generated method stub
-	}
 
 	@Override
 	public void attack(PlayerCharacter opponent) {

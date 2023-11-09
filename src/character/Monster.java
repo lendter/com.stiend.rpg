@@ -1,7 +1,5 @@
 package character;
 
-import physics.Position;
-
 public class Monster extends PlayerCharacter{
 
 	public Monster(String name, int hp, int intelligence, int strength, int constitution, int dexterity) {
@@ -10,14 +8,20 @@ public class Monster extends PlayerCharacter{
 
 	@Override
 	public void attack(PlayerCharacter opponent) {
-		// TODO Auto-generated method stub
-		
+		if(!opponent.defend(this)) {
+			opponent.setHp(opponent.getHp()-this.getStrength());
+		}else {
+			int damage = Math.abs(opponent.getStrength() - this.getStrength());
+			this.setHp(getHp() - damage);
+		}
 	}
 
 	@Override
 	public boolean defend(PlayerCharacter opponent) {
-		// TODO Auto-generated method stub
-		return false;
+		if(opponent.getStrength() > this.getStrength()) {
+			return false;
+		}
+		return true;
 	}
 
 }
