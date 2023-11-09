@@ -4,7 +4,7 @@ import character.PlayerCharacter;
 import items.Item;
 
 public class Field {
-		
+	
 		private Item item;
 		private PlayerCharacter character;
 		private boolean isWall;
@@ -32,7 +32,4 @@ public class Field {
 		public void setWall(boolean isWall) {
 			this.isWall = isWall;
 		}
-		
-		
-		
 }
