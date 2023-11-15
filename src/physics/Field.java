@@ -1,5 +1,6 @@
 package physics;
 
+import character.Monster;
 import character.PlayerCharacter;
 import items.Item;
 
@@ -7,6 +8,7 @@ public class Field {
 	
 		private Item item;
 		private PlayerCharacter character;
+		private Monster monster;
 		private boolean isWall;
 
 		public PlayerCharacter getCharacter() {
@@ -31,5 +33,13 @@ public class Field {
 
 		public void setWall(boolean isWall) {
 			this.isWall = isWall;
+		}
+
+		public Monster getMonster() {
+			return monster;
+		}
+
+		public void setMonster(Monster monster) {
+			this.monster = monster;
 		}
 }

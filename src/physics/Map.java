@@ -1,20 +1,19 @@
 package physics;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Map {
 	private int size;
-	private List<Lane> lanes;
+	private Field[][] fields;
 	
 	public Map(int size) {
-		this.lanes = new ArrayList<>();
+		this.fields = new Field[size][size];;
 		fillLanes();
 	}
 	
 	private void fillLanes() {
 		for(int i = 0; i < size; i++) {
-			lanes.add(new Lane(size));
+			for(int j = 0; j < size; j++) {
+				fields[i][j] = new Field();
+			}
 		}
 	}
 	
