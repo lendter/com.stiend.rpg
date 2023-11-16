@@ -1,6 +1,6 @@
 package character;
 
-public class Monster extends PlayerCharacter{
+public class Monster extends PlayerCharacter {
 
 	public Monster(String name, int hp, int intelligence, int strength, int constitution, int dexterity) {
 		super(name, hp, intelligence, strength, constitution, dexterity);
@@ -8,9 +8,9 @@ public class Monster extends PlayerCharacter{
 
 	@Override
 	public void attack(PlayerCharacter opponent) {
-		if(!opponent.defend(this)) {
-			opponent.setHp(opponent.getHp()-this.getStrength());
-		}else {
+		if (!opponent.defend(this)) {
+			opponent.setHp(opponent.getHp() - this.getStrength());
+		} else {
 			int damage = Math.abs(opponent.getStrength() - this.getStrength());
 			this.setHp(getHp() - damage);
 		}
@@ -18,9 +18,10 @@ public class Monster extends PlayerCharacter{
 
 	@Override
 	public boolean defend(PlayerCharacter opponent) {
-		if(opponent.getStrength() > this.getStrength()) {
+		if (opponent.getStrength() > this.getConstitution()) {
 			return false;
 		}
+		this.setConstitution(this.getConstitution() - this.getConstitution() / 3);
 		return true;
 	}
 

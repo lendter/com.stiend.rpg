@@ -27,6 +27,7 @@ public class Fighter extends PlayerCharacter{
 			takeDamage(opponent.getStrength()-this.getWeapon().getDefense());
 			return false;
 		}
+		this.getWeapon().setDefense(this.getWeapon().getDefense() / 2);
 		return true;
 	}
 
