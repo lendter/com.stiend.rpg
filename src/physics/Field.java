@@ -11,6 +11,8 @@ public class Field {
 		private Monster monster;
 		private boolean isWall;
 
+		public Field() {}
+		
 		public PlayerCharacter getCharacter() {
 			return character;
 		}

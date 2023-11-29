@@ -4,6 +4,8 @@ public class Map {
 	private int size;
 	private Field[][] fields;
 	
+	public Map() {}
+	
 	public Map(int size) {
 		this.fields = new Field[size][size];;
 		fillLanes();
@@ -15,6 +17,24 @@ public class Map {
 				fields[i][j] = new Field();
 			}
 		}
+	}
+	
+	public void setFields(Field[][] fields) {
+		this.fields = fields;
+	}
+	
+	public Field[][] getFields(){
+		return fields;
+	}
+	
+	public void setSize(int size) {
+		this.size = size;
+		setFields(new Field[size][size]);
+		fillLanes();
+	}
+	
+	public int getSize() {
+		return this.size;
 	}
 	
 	public Field getField(Position position) {

@@ -3,7 +3,9 @@ package physics;
 public class Position {
 	private int x;
 	private int y;
-	
+
+	public Position() {}
+
 	public Position(int x, int y) {
 		setX(x);
 		setY(y);
@@ -24,7 +26,5 @@ public class Position {
 	public void setY(int y) {
 		this.y = y;
 	}
-	
-	
-	
+
 }
