@@ -7,6 +7,7 @@ public class Map {
 	public Map() {}
 	
 	public Map(int size) {
+		this.size = size;
 		this.fields = new Field[size][size];;
 		fillLanes();
 	}
@@ -38,7 +39,7 @@ public class Map {
 	}
 	
 	public Field getField(Position position) {
-		return fields[position.getX()][position.getY()];
+		return fields[position.getY()][position.getX()];
 	}
 
 	public Field getField(int x, int y) {

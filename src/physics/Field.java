@@ -11,7 +11,12 @@ public class Field {
 		private Monster monster;
 		private boolean isWall;
 
-		public Field() {}
+		public Field() {
+			this.item = null;
+			this.character = null;
+			this.monster = null;
+			this.isWall = false;
+		}
 		
 		public PlayerCharacter getCharacter() {
 			return character;
