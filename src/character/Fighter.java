@@ -4,6 +4,9 @@ import items.Weapon;
 
 public class Fighter extends PlayerCharacter{
 	private Weapon weapon;
+	private final String type = this.getClass().toString();
+	
+	public Fighter() {}
 	
 	public Fighter(String name, int hp, int intelligence, int strength, int constitution, int dexterity, Weapon weapon) {
 		super(name, hp, intelligence, strength, constitution, dexterity);
@@ -37,6 +40,10 @@ public class Fighter extends PlayerCharacter{
 
 	public void setWeapon(Weapon weapon) {
 		this.weapon = weapon;
+	}
+
+	public String getType() {
+		return type;
 	}
 
 }

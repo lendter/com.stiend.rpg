@@ -3,6 +3,7 @@ package character;
 import physics.Position;
 
 public abstract class PlayerCharacter {
+	private final String type = this.getClass().toString();
 	private String name;
 	private int hp;
 	private int intelligence;
@@ -93,4 +94,8 @@ public abstract class PlayerCharacter {
 	public abstract void attack(PlayerCharacter opponent);
 	
 	public abstract boolean defend(PlayerCharacter opponent);
+
+	public String getType() {
+		return type;
+	}
 }

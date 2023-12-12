@@ -3,7 +3,10 @@ package character;
 import items.Weapon;
 
 public class Mercenary extends Fighter{
+	private final String type = this.getClass().toString();
 	private int blocks;
+	
+	public Mercenary() {}
 	
 	public Mercenary(String name, int hp, int intelligence, int strength, int constitution, int dexterity, Weapon weapon) {
 		super(name, hp, intelligence, strength, constitution, dexterity, weapon);
@@ -25,6 +28,10 @@ public class Mercenary extends Fighter{
 
 	private void setBlocks(int blocks) {
 		this.blocks = blocks;
+	}
+
+	public String getType() {
+		return type;
 	}
 	
 }

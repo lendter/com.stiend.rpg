@@ -4,8 +4,11 @@ import wizarding.MagicTalent;
 import wizarding.PerformStyle;
 
 public class Wizard extends PlayerCharacter {
+	private final String type = this.getClass().toString();
 	private MagicTalent talent;
 
+	public Wizard() {}
+	
 	public Wizard(String name, int hp, int intelligence, int strength, int constitution, int dexterity, MagicTalent talent) {
 		super(name, hp, intelligence, strength, constitution, dexterity);
 		setTalent(talent);
@@ -29,6 +32,10 @@ public class Wizard extends PlayerCharacter {
 
 	private void setTalent(MagicTalent talent) {
 		this.talent = talent;
+	}
+
+	public String getType() {
+		return type;
 	}
 
 }

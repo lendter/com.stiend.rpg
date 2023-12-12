@@ -1,7 +1,10 @@
 package character;
 
 public class Monster extends PlayerCharacter {
-
+	private final String type = this.getClass().toString();
+	
+	public Monster() {}
+	
 	public Monster(String name, int hp, int intelligence, int strength, int constitution, int dexterity) {
 		super(name, hp, intelligence, strength, constitution, dexterity);
 	}
@@ -23,6 +26,10 @@ public class Monster extends PlayerCharacter {
 		}
 		this.setConstitution(this.getConstitution() - this.getConstitution() / 3);
 		return true;
+	}
+
+	public String getType() {
+		return type;
 	}
 
 }
