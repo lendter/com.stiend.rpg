@@ -22,8 +22,12 @@ public class Field {
 			return character;
 		}
 
-		public void setCharacter(PlayerCharacter character) {
+		public boolean setCharacter(PlayerCharacter character) {
+			if(this.isWall) {
+				return false;
+			}
 			this.character = character;
+			return true;
 		}
 
 		public Item getItem() {
@@ -38,15 +42,23 @@ public class Field {
 			return isWall;
 		}
 
-		public void setWall(boolean isWall) {
+		public boolean setWall(boolean isWall) {
+			if(getCharacter() != null || getMonster() != null) {
+				return false;
+			}
 			this.isWall = isWall;
+			return true;
 		}
 
 		public Monster getMonster() {
 			return monster;
 		}
 
-		public void setMonster(Monster monster) {
+		public boolean setMonster(Monster monster) {
+			if(this.isWall) {
+				return false;
+			}
 			this.monster = monster;
+			return true;
 		}
 }
