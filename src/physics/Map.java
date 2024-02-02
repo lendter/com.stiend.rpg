@@ -43,7 +43,7 @@ public class Map {
 	}
 
 	public Field getField(int x, int y) {
-		return fields[x][y];
+		return fields[y][x];
 	}
 	
 	public Position getNextWall(Position position, Direction direction) {
